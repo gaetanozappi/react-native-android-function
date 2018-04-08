@@ -1,35 +1,23 @@
-# README #
+# React Native: Native Social
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Usage
 
-### What is this repository for? ###
+`import Social from 'react-native-social';`
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+- API Way
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
-
-import Social from 'react-native-social';
+```javascript
 Social.Youtube(url, true);
-Social.Facebook(url)
-Social.Instagram(url)
-Social.Twitter(url)
+```
+
+```javascript
+Social.Facebook(url);
+```
+
+```javascript
+Social.Instagram(url);
+```
+
+```javascript
+Social.Twitter(url);
+```
