@@ -8,19 +8,24 @@
 
 ### Android
 
+## Manually link
+
 Add `react-native-social` to your `./android/settings.gradle` file as follows:
 
-```text
-include ':react-native-social'
-project(':react-native-social').projectDir = new File(settingsDir, '../node_modules/react-native-social/android/app')
+```diff
+...
+include ':app'
++ include ':react-native-social'
++ project(':react-native-social').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-social/android/app')
 ```
 
 Include it as dependency in `./android/app/build.gradle` file:
 
-```text
+```diff
 dependencies {
     ...
-    compile project(':react-native-social')
+    compile "com.facebook.react:react-native:+"  // From node_modules
++   compile project(':react-native-social')
 }
 ```
 
