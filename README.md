@@ -1,5 +1,11 @@
 # React Native: Native Social
 
+[![github home](https://img.shields.io/badge/gaetanozappi-react--native--social-blue.svg?style=flat-square)](https://github.com/gaetanozappi/react-native-social)
+[![github issues](https://img.shields.io/github/issues/gaetanozappi/react-native-social.svg?style=flat-square)](https://github.com/gaetanozappi/react-native-social/issues)
+
+-   [Usage](#usage)
+-   [License](#license)
+
 ### Android
 
 Add `react-native-social` to your `./android/settings.gradle` file as follows:
