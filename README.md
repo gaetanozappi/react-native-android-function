@@ -71,5 +71,13 @@ Social.Instagram(url);
 Social.Twitter(url);
 ```
 
+```javascript
+Social.GooglePlayStore();
+```
+
+```javascript
+Social.General(appIntent,setPackage,webIntent);
+```
+
 ## License
 This library is provided under the Apache License.
