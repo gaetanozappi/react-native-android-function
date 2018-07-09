@@ -11,11 +11,10 @@ import com.facebook.react.bridge.ReactMethod;
 
 public class Social extends ReactContextBaseJavaModule {
     private ReactContext mReactContext;
-    private String url;
 
     public Social(ReactApplicationContext reactContext) {
         super(reactContext);
-        mReactContext = reactContext;
+        this.mReactContext = reactContext;
     }
 
     @ReactMethod
