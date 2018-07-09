@@ -70,6 +70,32 @@ public class Social extends ReactContextBaseJavaModule {
           getCurrentActivity().startActivity(webIntent);
       }
     }
+    
+    @ReactMethod
+    public void GooglePlayStore(){
+      final String appPackageName = getPackageName();
+      Intent appIntent = new Intent(Intent.ACTION_VIEW,Uri.parse("market://details?id="+appPackageName));
+      appIntent.setPackage("com.android.vending");
+      Intent webIntent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://play.google.com/store/apps/details?id="+appPackageName));
+      try{
+          getCurrentActivity().startActivity(appIntent);
+      }catch(ActivityNotFoundException ex){
+          getCurrentActivity().startActivity(webIntent);
+      }
+    }
+    
+    @ReactMethod
+    public void General(String appIntent,String setPackage,String webIntent){
+      Intent appIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(appIntent));
+      appIntent.setPackage(setPackage);
+      Intent webIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(webIntent));
+      try{
+          getCurrentActivity().startActivity(appIntent);
+      }catch(ActivityNotFoundException ex){
+          getCurrentActivity().startActivity(webIntent);
+      }
+    }
+
 
     @Override
     public String getName() {
