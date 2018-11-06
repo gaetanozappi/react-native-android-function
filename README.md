@@ -8,8 +8,8 @@
 [![Issue Stats](https://img.shields.io/issuestats/i/github/gaetanozappi/react-native-social.svg?style=flat&colorB=44cc11)](http://github.com/gaetanozappi/react-native-social/issues)
 [![github license](https://img.shields.io/github/license/gaetanozappi/react-native-social.svg)]()
 
--   [Usage](#usage)
--   [License](#license)
+-   [Usage](#-usage)
+-   [License](#-license)
 
 ### Android
 
@@ -52,7 +52,7 @@ protected List<ReactPackage> getPackages() {
 After that, you will need to recompile
 your project with `react-native run-android`.
 
-## Usage
+## 💻 Usage
 
 ```javascript
 import Social from 'react-native-social';
@@ -84,5 +84,5 @@ Social.GooglePlayStore();
 Social.General(appIntent,setPackage,webIntent);
 ```
 
-## License
+## 📜 License
 This library is provided under the Apache License.
