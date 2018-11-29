@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.zappi.android.function;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;

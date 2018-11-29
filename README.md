@@ -1,12 +1,12 @@
-# React Native: react-native-social
+# React Native: react-native-android-function
 
 ![platforms](https://img.shields.io/badge/platforms-Android-brightgreen.svg?style=flat&colorB=191A17)
-[![github home](https://img.shields.io/badge/gaetanozappi-react--native--social-blue.svg?style=flat)](https://github.com/gaetanozappi/react-native-social)
+[![github home](https://img.shields.io/badge/gaetanozappi-react--native--social-blue.svg?style=flat)](https://github.com/gaetanozappi/react-native-android-function)
 
-[![github issues](https://img.shields.io/github/issues/gaetanozappi/react-native-social.svg?style=flat)](https://github.com/gaetanozappi/react-native-social/issues)
-[![github closed issues](https://img.shields.io/github/issues-closed/gaetanozappi/react-native-social.svg?style=flat&colorB=44cc11)](https://github.com/gaetanozappi/react-native-social/issues?q=is%3Aissue+is%3Aclosed)
-[![Issue Stats](https://img.shields.io/issuestats/i/github/gaetanozappi/react-native-social.svg?style=flat&colorB=44cc11)](http://github.com/gaetanozappi/react-native-social/issues)
-[![github license](https://img.shields.io/github/license/gaetanozappi/react-native-social.svg)]()
+[![github issues](https://img.shields.io/github/issues/gaetanozappi/react-native-android-function.svg?style=flat)](https://github.com/gaetanozappi/react-native-android-function/issues)
+[![github closed issues](https://img.shields.io/github/issues-closed/gaetanozappi/react-native-android-function.svg?style=flat&colorB=44cc11)](https://github.com/gaetanozappi/react-native-android-function/issues?q=is%3Aissue+is%3Aclosed)
+[![Issue Stats](https://img.shields.io/issuestats/i/github/gaetanozappi/react-native-android-function.svg?style=flat&colorB=44cc11)](http://github.com/gaetanozappi/react-native-android-function/issues)
+[![github license](https://img.shields.io/github/license/gaetanozappi/react-native-android-function.svg)]()
 
 -   [Usage](#-usage)
 -   [License](#-license)
@@ -15,13 +15,13 @@
 
 ## Manually link
 
-Add `react-native-social` to your `./android/settings.gradle` file as follows:
+Add `react-native-android-function` to your `./android/settings.gradle` file as follows:
 
 ```diff
 ...
 include ':app'
-+ include ':react-native-social'
-+ project(':react-native-social').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-social/android/app')
++ include ':react-native-android-function'
++ project(':react-native-android-function').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-android-function/android/app')
 ```
 
 Include it as dependency in `./android/app/build.gradle` file:
@@ -30,7 +30,7 @@ Include it as dependency in `./android/app/build.gradle` file:
 dependencies {
     ...
     compile "com.facebook.react:react-native:+"  // From node_modules
-+   compile project(':react-native-social')
++   compile project(':react-native-android-function')
 }
 ```
 
@@ -38,7 +38,7 @@ Finally, you need to add the package within the `ReactInstanceManager` of your
 MainActivity (`./android/app/src/main/java/your/bundle/MainActivity.java`):
 
 ```java
-import com.reactlibrary.SocialPackage;  // <---- import this one
+import com.zappi.android.function.SocialPackage;  // <---- import this one
 ...
 @Override
 protected List<ReactPackage> getPackages() {
@@ -55,33 +55,33 @@ your project with `react-native run-android`.
 ## 💻 Usage
 
 ```javascript
-import Social from 'react-native-social';
+import AndroidFunction from 'react-native-android-function';
 ```
 
 - API Way
 
 ```javascript
-Social.Youtube(url, true);
+AndroidFunction.Youtube(url, true);
 ```
 
 ```javascript
-Social.Facebook(url);
+AndroidFunction.Facebook(url);
 ```
 
 ```javascript
-Social.Instagram(url);
+AndroidFunction.Instagram(url);
 ```
 
 ```javascript
-Social.Twitter(url);
+AndroidFunction.Twitter(url);
 ```
 
 ```javascript
-Social.GooglePlayStore();
+AndroidFunction.GooglePlayStore();
 ```
 
 ```javascript
-Social.General(appIntent,setPackage,webIntent);
+AndroidFunction.General(appIntent,setPackage,webIntent);
 ```
 
 ## 📜 License
