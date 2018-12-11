@@ -1,11 +1,31 @@
 {
   "name": "react-native-android-function",
   "version": "0.0.1",
-  "description": "",
+  "description": "React native library, contains a set of functions.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaetanozappi/react-native-android-function.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gaetanozappi/react-native-android-function/issues"
+  },
+  "homepage": "https://github.com/gaetanozappi/react-native-android-functiont#readme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "react-native",
+    "android",
+    "function",
+    "shortcuts",
+    "youtube",
+    "facebook",
+    "instagram",
+    "twitter",
+    "googleplaystore"
+  ],
+  "author": "Gaetano Zappi",
+  "license": "Apache License 2.0",
+  "peerDependencies": {}
 }

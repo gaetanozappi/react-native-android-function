@@ -62,7 +62,7 @@ import AndroidFunction from 'react-native-android-function';
 - API Way
 
 ```javascript
-AndroidFunction.Youtube(url, true);
+AndroidFunction.Youtube(url,true);
 ```
 
 ```javascript
@@ -83,6 +83,52 @@ AndroidFunction.GooglePlayStore();
 
 ```javascript
 AndroidFunction.General(appIntent,setPackage,webIntent);
+```
+
+```javascript
+AndroidFunction.ShortCuts(urlImg,cropped,shortLabel,longLabel,appUri,setPackage);
+```
+
+```javascript
+AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
+```
+
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`type`|`string`|`facebook,instagram,twitter,googleplaystore`| What kind of intent to use.
+|`id`|`string`|| id of the user to pass.
+
+```javascript
+AndroidFunction.pinnedShortcuts
+(
+  [{
+    "urlImg": "https://scontent-mxp1-1.cdninstagram.com/vp/3c4732c2cd3566727dad10f03c04b7bd/5C9241C4/t51.2885-19/s150x150/34706107_1875460276079648_8096847319644766208_n.jpg",
+    "shortLabel": "Fox",
+    "longLabel": "Megan Fox",
+    "appUri": "https://www.google.com/search?q=megan+fox"
+  },
+  {
+    "urlImg": "http://images.amcnetworks.com/bbcamerica.com/wp-content/uploads/2017/05/anglo_2000x1125_larapulver-e1495023889751-640x360.jpg",
+    "shortLabel": "Pulver",
+    "longLabel": "Lara Pulver",
+    "appUri": "https://twitter.com/larapulver",
+    "setPackage" :"com.twitter.android"
+    },
+    {
+      "urlImg": "https://i.pinimg.com/originals/cd/3c/b9/cd3cb912cbcaafd13af7c774f4e4ba37.jpg",
+      "shortLabel": "Watson",
+      "longLabel": "Emma Watson",
+      "appUri": "https://www.instagram.com/_u/emmawatson/",
+      "setPackage" :"com.instagram.android"
+    },
+    {
+      "urlImg": "https://www.syfy.com/sites/syfy/files/styles/1200x680/public/2018/03/alba-ff2.jpg?itok=iH_tTKqw",
+      "shortLabel": "Alba",
+      "longLabel": "Jessica Alba",
+      "appUri": "fb://facewebmodal/f?href=https://www.facebook.com/jessicaalba",
+      "setPackage" :"com.facebook.katana"
+    }]
+);
 ```
 
 ## 📜 License
