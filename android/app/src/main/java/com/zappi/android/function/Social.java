@@ -1,6 +1,7 @@
 package com.zappi.android.function;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
@@ -17,6 +18,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.Typeface;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
@@ -24,6 +26,7 @@ import android.os.StrictMode;
 import android.support.v4.content.pm.ShortcutInfoCompat;
 import android.support.v4.content.pm.ShortcutManagerCompat;
 import android.support.v4.graphics.drawable.IconCompat;
+import android.util.DisplayMetrics;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
@@ -192,28 +195,42 @@ public class Social extends ReactContextBaseJavaModule {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N_MR1) {
 
             List<ShortcutInfo> array = new ArrayList<ShortcutInfo>();
-            ;
             for (int i = 0; i < map.size(); i++) {
                 ReadableMap frame = map.getMap(i);
-                String urlImg = frame.getString("urlImg");
+                String urlImg = frame.hasKey("urlImg") ? frame.getString("urlImg")  : "";
                 String shortLabel = frame.getString("shortLabel");
                 String longLabel = frame.getString("longLabel");
                 String appUri = frame.getString("appUri");
                 String setPackage = frame.hasKey("setPackage") ? frame.getString("setPackage") : "";
 
-                URL urlP = null;
-                try {
-                    urlP = new URL(urlImg);
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }
+                String typeImg = frame.hasKey("typeImg") ? frame.getString("typeImg") : "letter";
+                String colorText = frame.hasKey("colorText") ? frame.getString("colorText") : "#ffffff";
+                String colorCircle = frame.hasKey("colorCircle") ? frame.getString("colorCircle") : "#64B5F6";
                 Bitmap bmp = null;
-                try {
-                    bmp = BitmapFactory.decodeStream(urlP.openConnection().getInputStream());
-                } catch (IOException e) {
-                    e.printStackTrace();
+
+                //Resources resources = getReactApplicationContext().getResources();
+                //int resourceId = resources.getIdentifier("home", "drawable", getReactApplicationContext().getPackageName());
+                //bmp = drawableToBitmap(getReactApplicationContext().getDrawable(4000));
+
+                if(typeImg.equals("url")){
+                  URL urlP = null;
+                  try {
+                      urlP = new URL(urlImg);
+                  } catch (MalformedURLException e) {
+                      e.printStackTrace();
+                  }
+                  try {
+                      bmp = BitmapFactory.decodeStream(urlP.openConnection().getInputStream());
+                  } catch (IOException e) {
+                      e.printStackTrace();
+                  }
+                  bmp = getCroppedBitmap(bmp);
+                }else{
+                  String name = "";
+                  String[] splitLetter = longLabel.split(" ");
+                  for (String el : splitLetter) name += String.valueOf(el.charAt(0)).toUpperCase();
+                  bmp = generateCircleBitmap(mReactContext, Color.parseColor(colorText), Color.parseColor(colorCircle), 40, name);
                 }
-                bmp = getCroppedBitmap(bmp);
 
                 //Drawable o = generateVectorIcon("FontAwesome", "share", longLabel, "#2a60bd", 40);
                 //ReadableMap icn = frame.getMap("icon");
@@ -309,6 +326,41 @@ public class Social extends ReactContextBaseJavaModule {
 
         return bitmap;
     }
+
+    public Bitmap generateCircleBitmap(Context context, int colorText, int colorCircle, float diameterDP, String text) {
+      DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+      float diameterPixels = diameterDP * (metrics.densityDpi / 160f);
+      float radiusPixels = diameterPixels / 2;
+
+      // Create the bitmap
+      Bitmap output = Bitmap.createBitmap((int) diameterPixels, (int) diameterPixels, Bitmap.Config.ARGB_8888);
+
+      // Create the canvas to draw on
+      Canvas canvas = new Canvas(output);
+      canvas.drawARGB(0, 0, 0, 0);
+
+      // Draw the circle
+      final Paint paintC = new Paint();
+      paintC.setAntiAlias(true);
+      paintC.setColor(colorCircle);
+      canvas.drawCircle(radiusPixels, radiusPixels, radiusPixels, paintC);
+
+      // Draw the text
+      if (text != null && text.length() > 0) {
+          final Paint paintT = new Paint();
+          paintT.setColor(colorText);
+          paintT.setAntiAlias(true);
+          paintT.setTextSize(radiusPixels / 2);
+          Typeface typeFace = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Light.ttf");
+          paintT.setTypeface(typeFace);
+          final Rect textBounds = new Rect();
+          paintT.getTextBounds(text, 0, text.length(), textBounds);
+          canvas.drawText(text, radiusPixels - textBounds.exactCenterX(), radiusPixels - textBounds.exactCenterY(), paintT);
+      }
+
+      return output;
+    }
+
 
     public Bitmap getCroppedBitmap(Bitmap bitmap) {
         int max = bitmap.getWidth() < bitmap.getHeight() ? bitmap.getWidth() : bitmap.getHeight();

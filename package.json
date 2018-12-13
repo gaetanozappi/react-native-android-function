@@ -1,6 +1,6 @@
 {
   "name": "react-native-android-function",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React native library, contains a set of functions.",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/gaetanozappi/react-native-android-function/issues"
   },
-  "homepage": "https://github.com/gaetanozappi/react-native-android-functiont#readme",
+  "homepage": "https://github.com/gaetanozappi/react-native-android-function#readme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
