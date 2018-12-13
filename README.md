@@ -1,8 +1,10 @@
 # React Native: react-native-android-function
 
 [![GitHub package version](https://img.shields.io/github/package-json/v/gaetanozappi/react-native-android-function.svg?style=flat&colorB=2b7cff)](https://github.com/gaetanozappi/react-native-android-function)
+[![npm home](http://img.shields.io/npm/v/react-native-android-function.svg?style=flat)](https://www.npmjs.com/package/react-native-android-function)
 ![platforms](https://img.shields.io/badge/platforms-Android-brightgreen.svg?style=flat&colorB=191A17)
 [![github home](https://img.shields.io/badge/gaetanozappi-react--native--social-blue.svg?style=flat)](https://github.com/gaetanozappi/react-native-android-function)
+[![npm](https://img.shields.io/npm/dm/react-native-android-function.svg?style=flat&colorB=007ec6)](https://www.npmjs.com/package/react-native-android-function)
 
 [![github issues](https://img.shields.io/github/issues/gaetanozappi/react-native-android-function.svg?style=flat)](https://github.com/gaetanozappi/react-native-android-function/issues)
 [![github closed issues](https://img.shields.io/github/issues-closed/gaetanozappi/react-native-android-function.svg?style=flat&colorB=44cc11)](https://github.com/gaetanozappi/react-native-android-function/issues?q=is%3Aissue+is%3Aclosed)
@@ -12,46 +14,26 @@
 -   [Usage](#-usage)
 -   [License](#-license)
 
-### Android
+## 📖 Getting started
 
-## Manually link
+`$ npm install react-native-android-function --save`
 
-Add `react-native-android-function` to your `./android/settings.gradle` file as follows:
+`$ react-native link react-native-android-function`
 
-```diff
-...
-include ':app'
-+ include ':react-native-android-function'
-+ project(':react-native-android-function').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-android-function/android/app')
-```
+#### Android
 
-Include it as dependency in `./android/app/build.gradle` file:
-
-```diff
-dependencies {
-    ...
-    compile "com.facebook.react:react-native:+"  // From node_modules
-+   compile project(':react-native-android-function')
-}
-```
-
-Finally, you need to add the package within the `ReactInstanceManager` of your
-MainActivity (`./android/app/src/main/java/your/bundle/MainActivity.java`):
-
-```java
-import com.zappi.android.function.SocialPackage;  // <---- import this one
-...
-@Override
-protected List<ReactPackage> getPackages() {
-    return Arrays.<ReactPackage>asList(
-        new MainReactPackage(),
-        new SocialPackage()  // <---- add this line
-    );
-}
-```
-
-After that, you will need to recompile
-your project with `react-native run-android`.
+1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+  - Add `import com.zappi.android.function.SocialPackage;` to the imports at the top of the file
+  - Add `new SocialPackage()` to the list returned by the `getPackages()` method
+2. Append the following lines to `android/settings.gradle`:
+  	```
+  	include ':react-native-android-function'
+  	project(':react-native-android-function').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-android-function/android/app')
+  	```
+3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
+  	```
+      compile project(':react-native-android-function')
+  	```
 
 ## 💻 Usage
 
