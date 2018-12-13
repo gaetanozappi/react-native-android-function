@@ -134,26 +134,26 @@ AndroidFunction.pinnedShortcuts
 
 #### Some suggested colors
 
-![#e57373](https://placehold.it/15/e57373/000000?text=+) `#e57373`
-![#f06292](https://placehold.it/15/f06292/000000?text=+) `#f06292`
-![#ba68c8](https://placehold.it/15/ba68c8/000000?text=+) `#ba68c8`
-![#9575cd](https://placehold.it/15/9575cd/000000?text=+) `#9575cd`
-![#7986cb](https://placehold.it/15/7986cb/000000?text=+) `#7986cb`
-![#64b5f6](https://placehold.it/15/64b5f6/000000?text=+) `#64b5f6`
-![#4fc3f7](https://placehold.it/15/4fc3f7/000000?text=+) `#4fc3f7`
-![#4dd0e1](https://placehold.it/15/4dd0e1/000000?text=+) `#4dd0e1`
-![#4db6ac](https://placehold.it/15/4db6ac/000000?text=+) `#4db6ac`
-![#81c784](https://placehold.it/15/81c784/000000?text=+) `#81c784`
-![#aed581](https://placehold.it/15/aed581/000000?text=+) `#aed581`
-![#dce775](https://placehold.it/15/dce775/000000?text=+) `#dce775`
-![#fff176](https://placehold.it/15/fff176/000000?text=+) `#fff176`
-![#ffd54f](https://placehold.it/15/ffd54f/000000?text=+) `#ffd54f`
-![#ffb74d](https://placehold.it/15/ffb74d/000000?text=+) `#ffb74d`
-![#ff8a65](https://placehold.it/15/ff8a65/000000?text=+) `#ff8a65`
-![#a1887f](https://placehold.it/15/a1887f/000000?text=+) `#a1887f`
-![#e0e0e0](https://placehold.it/15/e0e0e0/000000?text=+) `#e0e0e0`
-![#90a4ae](https://placehold.it/15/90a4ae/000000?text=+) `#90a4ae`
-![#000000](https://placehold.it/15/000000/000000?text=+) `#000000`
+- ![#e57373](https://placehold.it/15/e57373/000000?text=+) `#e57373`
+- ![#f06292](https://placehold.it/15/f06292/000000?text=+) `#f06292`
+- ![#ba68c8](https://placehold.it/15/ba68c8/000000?text=+) `#ba68c8`
+- ![#9575cd](https://placehold.it/15/9575cd/000000?text=+) `#9575cd`
+- ![#7986cb](https://placehold.it/15/7986cb/000000?text=+) `#7986cb`
+- ![#64b5f6](https://placehold.it/15/64b5f6/000000?text=+) `#64b5f6`
+- ![#4fc3f7](https://placehold.it/15/4fc3f7/000000?text=+) `#4fc3f7`
+- ![#4dd0e1](https://placehold.it/15/4dd0e1/000000?text=+) `#4dd0e1`
+- ![#4db6ac](https://placehold.it/15/4db6ac/000000?text=+) `#4db6ac`
+- ![#81c784](https://placehold.it/15/81c784/000000?text=+) `#81c784`
+- ![#aed581](https://placehold.it/15/aed581/000000?text=+) `#aed581`
+- ![#dce775](https://placehold.it/15/dce775/000000?text=+) `#dce775`
+- ![#fff176](https://placehold.it/15/fff176/000000?text=+) `#fff176`
+- ![#ffd54f](https://placehold.it/15/ffd54f/000000?text=+) `#ffd54f`
+- ![#ffb74d](https://placehold.it/15/ffb74d/000000?text=+) `#ffb74d`
+- ![#ff8a65](https://placehold.it/15/ff8a65/000000?text=+) `#ff8a65`
+- ![#a1887f](https://placehold.it/15/a1887f/000000?text=+) `#a1887f`
+- ![#e0e0e0](https://placehold.it/15/e0e0e0/000000?text=+) `#e0e0e0`
+- ![#90a4ae](https://placehold.it/15/90a4ae/000000?text=+) `#90a4ae`
+- ![#000000](https://placehold.it/15/000000/000000?text=+) `#000000`
 
 ## 📜 License
 This library is provided under the Apache License.
