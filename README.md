@@ -77,7 +77,7 @@ AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`type`|`string`|| What kind of intent to use: `facebook,instagram,twitter,googleplaystore`.
+|`type`|`string`|| What kind of intent to use: `facebook,instagram,twitter,googleplaystore`
 |`id`|`string`|| id of the user to pass.
 
 ```javascript
