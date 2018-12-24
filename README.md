@@ -54,7 +54,7 @@ AndroidFunction.Youtube(url);
 |Prop|Type|Default|Note|
 | - | - | - | - |
 |`url`|`string`||URL of the Youtube video to open.
-|`fullscreen`|`boolean `|`true |It allows you to choose whether to view the video in fullscreen mode.
+|`fullscreen`|`boolean `|`true`|It allows you to choose whether to view the video in fullscreen mode.
 
 ```javascript
 AndroidFunction.Youtube(url,fullscreen);
@@ -259,11 +259,14 @@ const styles = StyleSheet.create({
 });
 ```
 
+#### AndroidFunction.pinnedShortcuts.setShortcutItem
+
 |Prop|Type|Default|Note|
 | - | - | - | - |
 |`typeImg`|`string`|`letter`|`url, icon, letter`
-|`colorText`|`string`|`#FFFFFF`| Text color, you can only use it as the typeImg is letter.
-|`colorCircle`|`string`|`#64B5F6`| Circle color, you can only use it as the typeImg is letter.
+|`icon`|`object`||[icon](#icon), you can only use it as the typeImg is icon.
+|`colorText`|`string`|![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) `#FFFFFF`| Text color, you can only use it as the typeImg is letter.
+|`colorCircle`|`string`|![#64B5F6](https://placehold.it/15/64B5F6/000000?text=+) `#64B5F6`| Circle color, you can only use it as the typeImg is letter.
 |`urlImg`|`string`|| Image url, you can only use it as the typeImg is url.
 |`shortLabel`|`string`||
 |`longLabel`|`string`||
@@ -271,6 +274,14 @@ const styles = StyleSheet.create({
 |`appUri`|`string`|||
 |`setPackage`|`string`|||
 |`infoIntent`|`object`||[infoIntent](#some-examples-of-infointent), you can only use it as the typeIntent is app.
+
+## icon
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`family`|`string`||Icon family type
+|`name`|`string`||Icon name
+|`colorText`|`string`|![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) `#FFFFFF`| Text color.
+|`colorCircle`|`string`|![#64B5F6](https://placehold.it/15/64B5F6/000000?text=+) `#64B5F6`| Circle color.
 
 ## Some examples of appUri and setPackage
 
