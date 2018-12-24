@@ -44,20 +44,54 @@ import AndroidFunction from 'react-native-android-function';
 - API Way
 
 ```javascript
-AndroidFunction.Youtube(url,true);
+AndroidFunction.Youtube(url);
 ```
 
-```javascript
-AndroidFunction.Facebook(url);
-```
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`url`|`string`||
+|`fullscreen`|`boolean `|`true |
 
 ```javascript
-AndroidFunction.Instagram(url);
+AndroidFunction.Youtube(url,fullscreen);
 ```
 
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`url`|`string`||
+|`fullscreen`|`boolean `||
+
 ```javascript
-AndroidFunction.Twitter(url);
+AndroidFunction.Facebook(id);
 ```
+
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`id`|`string`||
+
+```javascript
+AndroidFunction.Instagram(id);
+```
+
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`id`|`string`||
+
+```javascript
+AndroidFunction.Twitter(id);
+```
+
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`id`|`string`||
+
+```javascript
+AndroidFunction.GooglePlayStore(id);
+```
+
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`id`|`string`||
 
 ```javascript
 AndroidFunction.GooglePlayStore();
@@ -67,9 +101,24 @@ AndroidFunction.GooglePlayStore();
 AndroidFunction.General(appIntent,setPackage,webIntent);
 ```
 
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`appIntent`|`string `|||
+|`setPackage`|`string `|||
+|`webIntent`|`string `|||
+
 ```javascript
 AndroidFunction.ShortCuts(urlImg,cropped,shortLabel,longLabel,appUri,setPackage);
 ```
+
+|Prop|Type|Default|Note|
+| - | - | - | - |
+|`urlImg`|`string `|||
+|`cropped`|`boolean`|||
+|`shortLabel`|`string `|||
+|`longLabel`|`string `|||
+|`appUri`|`string `|||
+|`setPackage`|`string `|||
 
 ```javascript
 AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
@@ -77,8 +126,12 @@ AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`type`|`string`|| What kind of intent to use: `facebook,instagram,twitter,googleplaystore`
-|`id`|`string`|| id of the user to pass
+|`urlImg`|`string `||
+|`cropped`|`boolean`||
+|`shortLabel`|`string `||
+|`longLabel`|`string `||
+|`type`|`string `|| What kind of intent to use: `facebook,instagram,twitter,googleplaystore`|
+|`id`|`string `|| id of the user to pass|
 
 #### ShortCuts
 
