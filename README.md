@@ -43,14 +43,18 @@ import AndroidFunction from 'react-native-android-function';
 
 - API Way
 
+## Intents
+
+#### Youtube
+
 ```javascript
 AndroidFunction.Youtube(url);
 ```
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`url`|`string`||
-|`fullscreen`|`boolean `|`true |
+|`url`|`string`||URL of the Youtube video to open.
+|`fullscreen`|`boolean `|`true |It allows you to choose whether to view the video in fullscreen mode.
 
 ```javascript
 AndroidFunction.Youtube(url,fullscreen);
@@ -58,8 +62,10 @@ AndroidFunction.Youtube(url,fullscreen);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`url`|`string`||
-|`fullscreen`|`boolean `||
+|`url`|`string`||URL of the YouTube video to open.
+|`fullscreen`|`boolean `||It allows you to choose whether to view the video in fullscreen mode.
+
+#### Facebook
 
 ```javascript
 AndroidFunction.Facebook(id);
@@ -67,7 +73,9 @@ AndroidFunction.Facebook(id);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`id`|`string`||
+|`id`|`string`||Id of Facebook profile to open.
+
+#### Instagram
 
 ```javascript
 AndroidFunction.Instagram(id);
@@ -75,7 +83,9 @@ AndroidFunction.Instagram(id);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`id`|`string`||
+|`id`|`string`||Id of Instagram profile to open.
+
+#### Twitter
 
 ```javascript
 AndroidFunction.Twitter(id);
@@ -83,7 +93,9 @@ AndroidFunction.Twitter(id);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`id`|`string`||
+|`id`|`string`||Id of Twitter profile to open.
+
+#### Google Play Store
 
 ```javascript
 AndroidFunction.GooglePlayStore(id);
@@ -91,11 +103,15 @@ AndroidFunction.GooglePlayStore(id);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`id`|`string`||
+|`id`|`string`||Id of Google Play Store profile to open.
 
 ```javascript
 AndroidFunction.GooglePlayStore();
 ```
+
+Open as intent the google play store passing id in the app in use it is on the google play store.
+
+#### General intent
 
 ```javascript
 AndroidFunction.General(appIntent,setPackage,webIntent);
@@ -103,9 +119,9 @@ AndroidFunction.General(appIntent,setPackage,webIntent);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`appIntent`|`string `|||
-|`setPackage`|`string `|||
-|`webIntent`|`string `|||
+|`appIntent`|`string `||
+|`setPackage`|`string `||
+|`webIntent`|`string `||
 
 ```javascript
 AndroidFunction.ShortCuts(urlImg,cropped,shortLabel,longLabel,appUri,setPackage);
@@ -113,12 +129,12 @@ AndroidFunction.ShortCuts(urlImg,cropped,shortLabel,longLabel,appUri,setPackage)
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`urlImg`|`string `|||
-|`cropped`|`boolean`|||
-|`shortLabel`|`string `|||
-|`longLabel`|`string `|||
-|`appUri`|`string `|||
-|`setPackage`|`string `|||
+|`urlImg`|`string `||Url of the image.
+|`cropped`|`boolean`||Ability of skill the rounding of the image.
+|`shortLabel`|`string `||
+|`longLabel`|`string `||
+|`appUri`|`string `||
+|`setPackage`|`string `||
 
 ```javascript
 AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
@@ -126,14 +142,14 @@ AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`urlImg`|`string `||
-|`cropped`|`boolean`||
+|`urlImg`|`string `||Url of the image.
+|`cropped`|`boolean`||Ability of skill the rounding of the image.
 |`shortLabel`|`string `||
 |`longLabel`|`string `||
 |`type`|`string `|| What kind of intent to use: `facebook,instagram,twitter,googleplaystore`|
 |`id`|`string `|| id of the user to pass|
 
-#### ShortCuts
+#### Pinned ShortCuts
 
 <img src="https://github.com/gaetanozappi/react-native-android-function/raw/master/screenshot/shortcuts.gif" />
 
@@ -254,7 +270,7 @@ const styles = StyleSheet.create({
 |`typeIntent`|`string`|`app`|`uri or app`
 |`appUri`|`string`||
 |`setPackage`|`string`||
-|`infoIntent`|`object`||
+|`infoIntent`|`object`||[infoIntent](#some-examples-of-infointent)
 
 ## Some examples of appUri and setPackage
 
