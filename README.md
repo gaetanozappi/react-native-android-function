@@ -78,7 +78,11 @@ AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
 |Prop|Type|Default|Note|
 | - | - | - | - |
 |`type`|`string`|| What kind of intent to use: `facebook,instagram,twitter,googleplaystore`
-|`id`|`string`|| id of the user to pass.
+|`id`|`string`|| id of the user to pass
+
+#### ShortCuts
+
+<img src="https://github.com/gaetanozappi/react-native-android-function/raw/master/screenshot/shortcuts.gif" />
 
 ```javascript
 import * as React from 'react';

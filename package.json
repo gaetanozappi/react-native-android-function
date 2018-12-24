@@ -10,7 +10,7 @@
     "url": "https://github.com/gaetanozappi/react-native-android-function/issues"
   },
   "homepage": "https://github.com/gaetanozappi/react-native-android-function#readme",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
