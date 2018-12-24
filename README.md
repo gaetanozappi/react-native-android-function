@@ -281,6 +281,9 @@ const styles = StyleSheet.create({
 |`colorText`|`string`|![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) `#FFFFFF`| Text color.
 |`colorCircle`|`string`|![#64B5F6](https://placehold.it/15/64B5F6/000000?text=+) `#64B5F6`| Circle color.
 
+See: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+To search for icons: [react-native-vector-icons](https://oblador.github.io/react-native-vector-icons)
+
 ## Some examples of appUri and setPackage
 
 #### Open page browser
