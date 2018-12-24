@@ -41,8 +41,6 @@
 import AndroidFunction from 'react-native-android-function';
 ```
 
-- API Way
-
 ## Intents
 
 #### Youtube
