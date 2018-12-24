@@ -10,11 +10,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SocialPackage implements ReactPackage {
+public class AndroidFunctionPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> myModules = new ArrayList<>();
-        myModules.add(new Social(reactContext));
+        myModules.add(new AndroidFunction(reactContext));
+        myModules.add(new PinnedShortcuts(reactContext));
         return myModules;
     }
 

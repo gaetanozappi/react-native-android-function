@@ -81,56 +81,175 @@ AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
 |`id`|`string`|| id of the user to pass.
 
 ```javascript
-AndroidFunction.pinnedShortcuts
-(
-  [{
-    "typeImg": "url",
-    "urlImg": "https://scontent-mxp1-1.cdninstagram.com/vp/3c4732c2cd3566727dad10f03c04b7bd/5C9241C4/t51.2885-19/s150x150/34706107_1875460276079648_8096847319644766208_n.jpg",
-    "shortLabel": "Fox",
-    "longLabel": "Megan Fox",
-    "appUri": "https://www.google.com/search?q=megan+fox"
+import * as React from 'react';
+import { Text, View, StyleSheet, ToastAndroid } from 'react-native';
+import AndroidFunction from 'react-native-android-function';
+
+AndroidFunction.pinnedShortcuts.setShortcutItems([
+  {
+    typeImg: 'icon',
+    icon: {
+      family: 'Entypo',
+      name: 'browser',
+      colorIcon: '#90a4ae',
+      colorCircle: '#000000',
+    },
+    shortLabel: 'Browser',
+    longLabel: 'Open Browser',
+    typeIntent: 'uri',
+    appUri: 'https://www.google.com/',
   },
   {
-    "typeImg": "",
-    "colorText": "#000000",
-    "urlImg": "http://images.amcnetworks.com/bbcamerica.com/wp-content/uploads/2017/05/anglo_2000x1125_larapulver-e1495023889751-640x360.jpg",
-    "shortLabel": "Pulver",
-    "longLabel": "Lara Pulver",
-    "appUri": "https://twitter.com/larapulver",
-    "setPackage" :"com.twitter.android"
+    typeImg: 'url',
+    urlImg:
+      'http://images.amcnetworks.com/bbcamerica.com/wp-content/uploads/2017/05/anglo_2000x1125_larapulver-e1495023889751-640x360.jpg',
+    shortLabel: 'Pulver',
+    longLabel: 'Lara Pulver',
+    typeIntent: 'uri',
+    appUri: 'https://twitter.com/larapulver',
+    setPackage: 'com.twitter.android',
+  },
+  {
+    typeImg: 'letter',
+    colorText: '#ffffff',
+    colorCircle: '#e57373',
+    shortLabel: 'Watson',
+    longLabel: 'Emma Watson',
+    typeIntent: 'uri',
+    appUri: 'https://www.instagram.com/_u/emmawatson/',
+    setPackage: 'com.instagram.android',
+  },
+  {
+    typeImg: 'icon',
+    icon: {
+      family: 'MaterialCommunityIcons',
+      name: 'emoticon-happy',
     },
-    {
-      "typeImg": "letter",
-      "colorText": "#64b5f6",
-      "colorCircle": "#f06292",
-      "urlImg": "https://i.pinimg.com/originals/cd/3c/b9/cd3cb912cbcaafd13af7c774f4e4ba37.jpg",
-      "shortLabel": "Watson",
-      "longLabel": "Emma Watson",
-      "appUri": "https://www.instagram.com/_u/emmawatson/",
-      "setPackage" :"com.instagram.android"
+    shortLabel: 'App pass param',
+    longLabel: 'Open App',
+    typeIntent: 'app',
+    infoIntent: {
+      name: 'Megan',
+      surname: 'Fox',
+      urlImg:
+        'https://scontent-mxp1-1.cdninstagram.com/vp/3c4732c2cd3566727dad10f03c04b7bd/5C9241C4/t51.2885-19/s150x150/34706107_1875460276079648_8096847319644766208_n.jpg',
+      age: 32,
+      height: '1.63 m',
     },
-    {
-      "typeImg": "ur",
-      "colorCircle": "#7986cb",
-      "urlImg": "https://www.syfy.com/sites/syfy/files/styles/1200x680/public/2018/03/alba-ff2.jpg?itok=iH_tTKqw",
-      "shortLabel": "Alba",
-      "longLabel": "Jessica Alba",
-      "appUri": "fb://facewebmodal/f?href=https://www.facebook.com/jessicaalba",
-      "setPackage" :"com.facebook.katana"
-    }]
-);
+  },
+]);
+
+export default class ExampleShortcuts extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: {},
+    };
+  }
+
+  componentDidMount() {
+    AndroidFunction.pinnedShortcuts
+      .popInitialAction()
+      .then(data => {
+        if (Object.keys(data).length == 0 || Object.keys(data.obj).length == 0)
+          return;
+        console.log('App3:', data);
+        this.setState({ data: data.obj });
+        ToastAndroid.show(data.obj.name, ToastAndroid.SHORT);
+      })
+      .catch(console.error);
+  }
+
+  render() {
+    const { data } = this.state;
+    return (
+      <View style={styles.container}>
+      <Text style={styles.paragraph}>Quick Action: {(data.name && data.name+" "+data.surname) || 'None'}</Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
 ```
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`typeImg`|`string`|`letter`|`letter or url`
-|`colorText`|`string`|`#FFFFFF`|
-|`colorCircle`|`string`|`#64B5F6`|
-|`urlImg`|`string`||
+|`typeImg`|`string`|`letter`|`url, icon, letter`
+|`colorText`|`string`|`#FFFFFF`| Text color, you can only use it as the type is letter.
+|`colorCircle`|`string`|`#64B5F6`| Circle color, you can only use it as the type is letter.
+|`urlImg`|`string`|| Image url, you can only use it as the type is url.
 |`shortLabel`|`string`||
 |`longLabel`|`string`||
+|`typeIntent`|`string`|`app`|`uri or app`
 |`appUri`|`string`||
 |`setPackage`|`string`||
+|`infoIntent`|`object`||
+
+## Some examples of appUri and setPackage
+
+#### Open page browser
+
+|appUri|setPackage|Note|
+| - | - | - |
+|`https://www.google.com/`|||
+
+#### Facebook
+
+|appUri|setPackage|Note|
+| - | - | - |
+|`https://www.facebook.com/`+id|`com.facebook.katana`||
+|`fb://facewebmodal/f?href=https://www.facebook.com/`+id|`com.facebook.katana`||
+
+#### Instagram
+|appUri|setPackage|Note|
+| - | - | - |
+|`http://instagram.com/`+id|`com.instagram.android`||
+|`http://instagram.com/_u/`+id|`com.instagram.android`||
+
+#### Twitter
+|appUri|setPackage|Note|
+| - | - | - |
+|`https://twitter.com/`+id|`com.twitter.android`||
+|`twitter://user?screen_name=`+id|`com.twitter.android`|||
+|`https://twitter.com/intent/tweet?text=%23`+text|||
+|`https://twitter.com/search?f=tweets&q=`+text|||
+
+#### Google Play Store
+|appUri|setPackage|Note|
+| - | - | - |
+|`https://play.google.com/store/apps/details?id=`+id|`com.android.vending`||
+|`market://details?id=`+id|`com.android.vending`||
+
+#### Youtube
+|appUri|setPackage|Note|
+| - | - | - |
+|`http://www.youtube.com/watch?v=`+id|||
+|`vnd.youtube:`+id|||
+
+## Some examples of infoIntent
+
+```javascript
+infoIntent: {
+paramOne: 21,//int
+paramTwo: "James Bond",//string
+paramThree: 0.07,//float
+....
+}
+```
 
 #### Some suggested colors
 
