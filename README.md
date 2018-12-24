@@ -149,7 +149,7 @@ AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
 
 #### Pinned ShortCuts
 
-<img src="https://github.com/gaetanozappi/react-native-android-function/raw/master/screenshot/shortcuts.gif" />
+<img src="https://github.com/gaetanozappi/react-native-android-function/raw/master/screenshot/react-native-android-function.jpg" />
 
 ```javascript
 import * as React from 'react';
