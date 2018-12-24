@@ -23,8 +23,8 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.zappi.android.function.SocialPackage;` to the imports at the top of the file
-  - Add `new SocialPackage()` to the list returned by the `getPackages()` method
+  - Add `import com.zappi.android.function.AndroidFunctionPackage;` to the imports at the top of the file
+  - Add `new AndroidFunctionPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
   	include ':react-native-android-function'
