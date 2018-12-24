@@ -119,9 +119,9 @@ AndroidFunction.General(appIntent,setPackage,webIntent);
 
 |Prop|Type|Default|Note|
 | - | - | - | - |
-|`appIntent`|`string `||
-|`setPackage`|`string `||
-|`webIntent`|`string `||
+|`appIntent`|`string`|||
+|`setPackage`|`string`|||
+|`webIntent`|`string`||||
 
 ```javascript
 AndroidFunction.ShortCuts(urlImg,cropped,shortLabel,longLabel,appUri,setPackage);
@@ -131,10 +131,10 @@ AndroidFunction.ShortCuts(urlImg,cropped,shortLabel,longLabel,appUri,setPackage)
 | - | - | - | - |
 |`urlImg`|`string `||Url of the image.
 |`cropped`|`boolean`||Ability of skill the rounding of the image.
-|`shortLabel`|`string `||
-|`longLabel`|`string `||
-|`appUri`|`string `||
-|`setPackage`|`string `||
+|`shortLabel`|`string `|||
+|`longLabel`|`string `|||
+|`appUri`|`string `|||
+|`setPackage`|`string `||||
 
 ```javascript
 AndroidFunction.ShortCutsType(urlImg,cropped,shortLabel,longLabel,type,id);
@@ -262,15 +262,15 @@ const styles = StyleSheet.create({
 |Prop|Type|Default|Note|
 | - | - | - | - |
 |`typeImg`|`string`|`letter`|`url, icon, letter`
-|`colorText`|`string`|`#FFFFFF`| Text color, you can only use it as the type is letter.
-|`colorCircle`|`string`|`#64B5F6`| Circle color, you can only use it as the type is letter.
-|`urlImg`|`string`|| Image url, you can only use it as the type is url.
+|`colorText`|`string`|`#FFFFFF`| Text color, you can only use it as the typeImg is letter.
+|`colorCircle`|`string`|`#64B5F6`| Circle color, you can only use it as the typeImg is letter.
+|`urlImg`|`string`|| Image url, you can only use it as the typeImg is url.
 |`shortLabel`|`string`||
 |`longLabel`|`string`||
-|`typeIntent`|`string`|`app`|`uri or app`
-|`appUri`|`string`||
-|`setPackage`|`string`||
-|`infoIntent`|`object`||[infoIntent](#some-examples-of-infointent)
+|`typeIntent`|`string`|`app`|`Uri`, allows you to open an intent to an external app, see: [examples](#some-examples-of-appuri-and-setpackage) `App`, allows you to open the app itself by passing the objects defined in infoIntent, see: [infoIntent](#some-examples-of-infointent)
+|`appUri`|`string`|||
+|`setPackage`|`string`|||
+|`infoIntent`|`object`||[infoIntent](#some-examples-of-infointent), you can only use it as the typeIntent is app.
 
 ## Some examples of appUri and setPackage
 
@@ -278,14 +278,14 @@ const styles = StyleSheet.create({
 
 |appUri|setPackage|Note|
 | - | - | - |
-|`https://www.google.com/`|||
+|`https://www.google.com/`||||
 
 #### Facebook
 
 |appUri|setPackage|Note|
 | - | - | - |
 |`https://www.facebook.com/`+id|`com.facebook.katana`||
-|`fb://facewebmodal/f?href=https://www.facebook.com/`+id|`com.facebook.katana`||
+|`fb://facewebmodal/f?href=https://www.facebook.com/`+id|`com.facebook.katana`|||
 
 #### Instagram
 |appUri|setPackage|Note|
@@ -299,19 +299,19 @@ const styles = StyleSheet.create({
 |`https://twitter.com/`+id|`com.twitter.android`||
 |`twitter://user?screen_name=`+id|`com.twitter.android`|||
 |`https://twitter.com/intent/tweet?text=%23`+text|||
-|`https://twitter.com/search?f=tweets&q=`+text|||
+|`https://twitter.com/search?f=tweets&q=`+text||||
 
 #### Google Play Store
 |appUri|setPackage|Note|
 | - | - | - |
 |`https://play.google.com/store/apps/details?id=`+id|`com.android.vending`||
-|`market://details?id=`+id|`com.android.vending`||
+|`market://details?id=`+id|`com.android.vending`|||
 
 #### Youtube
 |appUri|setPackage|Note|
 | - | - | - |
 |`http://www.youtube.com/watch?v=`+id|||
-|`vnd.youtube:`+id|||
+|`vnd.youtube:`+id||||
 
 ## Some examples of infoIntent
 
