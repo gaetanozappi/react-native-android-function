@@ -2,7 +2,7 @@
 
 [![GitHub package version](https://img.shields.io/github/package-json/v/gaetanozappi/react-native-android-function.svg?style=flat&colorB=2b7cff)](https://github.com/gaetanozappi/react-native-android-function)
 [![npm home](http://img.shields.io/npm/v/react-native-android-function.svg?style=flat)](https://www.npmjs.com/package/react-native-android-function)
-![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat&colorB=191A17)
+![platforms](https://img.shields.io/badge/platforms-Android-brightgreen.svg?style=flat&colorB=191A17)
 [![github home](https://img.shields.io/badge/gaetanozappi-react--native--social-blue.svg?style=flat)](https://github.com/gaetanozappi/react-native-android-function)
 [![npm](https://img.shields.io/npm/dm/react-native-android-function.svg?style=flat&colorB=007ec6)](https://www.npmjs.com/package/react-native-android-function)
 
